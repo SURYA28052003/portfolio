@@ -1,0 +1,49 @@
+<!-- myapp/templates/user_info.html -->
+<form method="post" action="{% url 'user_info' %}">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Set your desired background color */
+    margin: 0;
+  }
+
+  form {
+    background-color: #ffffff; /* Set your desired form background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $("form").submit(function (event) {
+      event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+      // Use Fetch API to send the form data to the server
+      fetch("", {
+        method: "POST",
+        body: new FormData(this),
+        headers: {
+          "X-CSRFToken": $("input[name=csrfmiddlewaretoken]").val(),
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response, update the page content as needed
+          console.log(data);
+          alert("Form submitted successfully!");
+        })
+        .catch((error) => console.error("Error:", error));
+    });
+  });
+</script>
