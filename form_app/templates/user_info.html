@@ -1,49 +1,171 @@
-<!-- myapp/templates/user_info.html -->
-<form method="post" action="{% url 'user_info' %}">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Submit</button>
-</form>
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/14e6e7efdd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surya Portfolio</title>
+  </head>
+  <body>
+    <!-- navigation bar -->
+    <header>
+      <a href="#home" class="logo">SURYA</a>
+      <nav class="links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Me</a>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown">
+          <a href="#about" class="active">About Me</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact Me</a>
+        </div>
+      </nav>
+    </header>
+    <!-- home page -->
+    <section id="home">
+      <div class="shape-outer sign-right">
+        <div class="shape-inner sign-right"></div>
+      </div>
+      <div class="socials">
+        <p>
+          Hi, I'm Surya. I'm pursuing my B.Tech degree at Srm University. I
+          aspire to become a Full-Stack Web developer. Currently, I am learning
+          ReactJs, Django, Data Structure Algorithm and more.<br /><br />
+          <a class="soc" href="https://www.linkedin.com/in/surya-s-490580229/"
+            ><i class="fa-brands fa-linkedin"> </i
+          ></a>
 
-<style>
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0; /* Set your desired background color */
-    margin: 0;
-  }
+          <a class="soc" href="https://github.com/SURYA28052003"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a class="soc" href=""><i class="fa-brands fa-instagram"></i></a>
+        </p>
+      </div>
+    </section>
 
-  form {
-    background-color: #ffffff; /* Set your desired form background color */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-</style>
+    <!-- about section -->
+    <section id="about">
+      <p>
+        Hi, I'm Surya. I'm pursuing my B.Tech degree at Srm University. I aspire
+        to become a Full-Stack Web developer. Currently, I am learning ReactJs,
+        Django, Data Structure Algorithm and more.<br /><br />
+        <b>My Thoughts</b><br />
+        I don’t like to define myself by the work I’ve done. I define myself by
+        the work I want to do. Skills can be taught, personality is inherent. I
+        prefer to keep learning, continue challenging myself, and do interesting
+        things that matter.I'm Always curious, humble and courageous.<br /><br />
+        <b>My Goal</b><br />
+        My abundant energy and boundless enthusiasm fuels me in the pursuit of
+        many interests, hobbies, areas of study and artistic endeavors. I’m a
+        fast learner, able to pick up new skills and juggle different projects
+        and roles with relative ease. I like to develop expertise in a number of
+        areas over the course of my life and career.
+      </p>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- skills section -->
+    <section id="skills">
+      <h2 class="title">Skills & Abilities</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/C.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/C++.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/python.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/html.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/css.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/git.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/react.png' %}" alt="C" />
+        </div>
+        <div class="grid-item">
+          <img class="skills" src="{% static 'images/js.png' %}" alt="C" />
+        </div>
+      </div>
+    </section>
 
-<script>
-  $(document).ready(function () {
-    $("form").submit(function (event) {
-      event.preventDefault(); // Prevent the form from submitting in the traditional way
+    <!-- projects section -->
+    <section id="projects">
+      <h2 class="title">Projects</h2>
+      <ul class="grid" id="myul">
+        <li>
+          <div class="container">
+            <a class="button" target="_blank"
+              ><img
+                src="{% static 'images/guess_number.jpg' %}"
+                alt="pro1"
+                class="image"
+            /></a>
+            <button class="btn">
+              <a
+                class="font"
+                href="https://github.com/SURYA28052003/Guess-The-Number"
+                >view code</a
+              >
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <a class="button" target="_blank"
+              ><img
+                src="{% static 'images/movie_site.jpg' %}"
+                alt="pro1"
+                class="image"
+            /></a>
+            <button class="btn">
+              <a href="https://github.com/SURYA28052003/avengers">view code</a>
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <a class="button" target="_blank"
+              ><img
+                src="{% static 'images/movie_site.jpg' %}"
+                alt="pro1"
+                class="image"
+            /></a>
+            <button class="btn">
+              <a href="https://github.com/SURYA28052003/disease-prediction"
+                >view code</a
+              >
+            </button>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-      // Use Fetch API to send the form data to the server
-      fetch("", {
-        method: "POST",
-        body: new FormData(this),
-        headers: {
-          "X-CSRFToken": $("input[name=csrfmiddlewaretoken]").val(),
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // Handle the response, update the page content as needed
-          console.log(data);
-          alert("Form submitted successfully!");
-        })
-        .catch((error) => console.error("Error:", error));
-    });
-  });
-</script>
+    <!-- contact section -->
+    <section id="contact">
+      <h2 class="title">Contact</h2>
+      <form method="post" action="{% url 'user_info' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <button class="form_btn" type="submit">Submit</button>
+      </form>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
