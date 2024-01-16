@@ -21,7 +21,7 @@ $(document).ready(function () {
 });
 
 let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("header nav a");
+let navLinks = document.querySelectorAll("nav ul li a");
 window.onscroll = () => {
   sections.forEach((sec) => {
     let top = window.scrollY;
@@ -32,20 +32,9 @@ window.onscroll = () => {
       navLinks.forEach((links) => {
         links.classList.remove("active");
         document
-          .querySelector("header nav a[href*=" + id + "]")
+          .querySelector("nav ul li a[href*=" + id + "]")
           .classList.add("active");
       });
     }
   });
-};
-
-const toggleBtn = document.querySelector(".toggle_btn");
-const toggleBtnIcon = document.querySelector(".toggle_btn i");
-const dropDown = document.querySelector(".dropdown");
-
-toggleBtn.onclick = function () {
-  dropDown.classList.toggle("open");
-  const isopen = dropDown.classList.contains("open");
-
-  toggleBtnIcon.classList = isopen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
 };

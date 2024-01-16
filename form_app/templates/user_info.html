@@ -13,8 +13,8 @@
   </head>
   <body>
     <!-- navigation bar -->
-    <header>
-      <a href="#home" class="logo">SURYA</a>
+    <!-- <header> -->
+    <!-- <a href="#home" class="logo">SURYA</a>
       <nav class="links">
         <a href="#home" class="active">Home</a>
         <a href="#about">About Me</a>
@@ -24,14 +24,29 @@
         <div class="toggle_btn">
           <i class="fa-solid fa-bars"></i>
         </div>
-        <div class="dropdown">
-          <a href="#about" class="active">About Me</a>
+        <div class="dropdown open">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About Me</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact Me</a>
         </div>
-      </nav>
-    </header>
+      </nav> -->
+    <nav>
+      <input type="checkbox" id="check" />
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Surya</label>
+      <ul class="navigation">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- </header> -->
     <!-- home page -->
     <section id="home">
       <div class="shape-outer sign-right">
@@ -76,39 +91,80 @@
 
     <!-- skills section -->
     <section id="skills">
-      <h2 class="title">Skills & Abilities</h2>
-      <div class="grid-container">
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/C.png' %}" alt="C" />
+      <ul>
+        <li><h2 class="title">skills</h2></li>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705447128/z3e8wfm2nhm2zvtywbfc.svg"
+              alt="C"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705447128/lsmgzovyoicfo7xzwaa4.svg"
+              alt="C++"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705446644/l5rl0n2g5fwkcbfeg0fs.svg"
+              alt="PYTHON"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705446644/uimxghlu6u7f1e7lihq7.svg"
+              alt="Django"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705446644/znslreud11nzvwg6cxsf.svg"
+              alt="HTML"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705446644/psibxmhdj50o4hyvqhpc.svg"
+              alt="CSS"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705444439/yu8uxtmkonuejsa1a7ye.svg"
+              alt="GIT"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705446646/tretckxzacpnqhsimnlw.svg"
+              alt="ReactJs"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              class="skills"
+              src="https://res.cloudinary.com/dbxfux4yh/image/upload/v1705446644/sx0clhzqo5m1dzrckmvy.svg"
+              alt="JS"
+            />
+          </div>
         </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/C++.png' %}" alt="C" />
-        </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/python.png' %}" alt="C" />
-        </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/html.png' %}" alt="C" />
-        </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/css.png' %}" alt="C" />
-        </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/git.png' %}" alt="C" />
-        </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/react.png' %}" alt="C" />
-        </div>
-        <div class="grid-item">
-          <img class="skills" src="{% static 'images/js.png' %}" alt="C" />
-        </div>
-      </div>
+      </ul>
     </section>
 
     <!-- projects section -->
     <section id="projects">
-      <h2 class="title">Projects</h2>
       <ul class="grid" id="myul">
+        <h2 class="title">Projects</h2>
         <li>
           <div class="container">
             <a class="button" target="_blank"
@@ -159,8 +215,8 @@
 
     <!-- contact section -->
     <section id="contact">
-      <h2 class="title">Contact</h2>
       <form method="post" action="{% url 'user_info' %}">
+        <h2 class="title">Contact</h2>
         {% csrf_token %} {{ form.as_p }}
         <button class="form_btn" type="submit">Submit</button>
       </form>
