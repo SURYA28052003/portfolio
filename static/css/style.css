@@ -413,10 +413,13 @@ input {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10%;
+  gap: 30px;
 }
 .grid-item {
   padding: 20px;
   font-size: 30px;
+  background-color: #11141a;
+  border-radius: 40px;
   text-align: center;
 }
 

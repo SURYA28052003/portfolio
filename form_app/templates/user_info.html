@@ -12,32 +12,12 @@
     <title>Surya Portfolio</title>
   </head>
   <body>
-    <!-- navigation bar -->
-    <!-- <header> -->
-    <!-- <a href="#home" class="logo">SURYA</a>
-      <nav class="links">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact Me</a>
-        <div class="toggle_btn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="dropdown open">
-          <a href="#home" class="active">Home</a>
-          <a href="#about">About Me</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact Me</a>
-        </div>
-      </nav> -->
     <nav>
       <input type="checkbox" id="check" />
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo">Surya</label>
+      <label class="logo"><a href="#home">Surya</a></label>
       <ul class="navigation">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -46,7 +26,6 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <!-- </header> -->
     <!-- home page -->
     <section id="home">
       <div class="shape-outer sign-right">
@@ -169,23 +148,6 @@
           <div class="container">
             <a class="button" target="_blank"
               ><img
-                src="{% static 'images/guess_number.jpg' %}"
-                alt="pro1"
-                class="image"
-            /></a>
-            <button class="btn">
-              <a
-                class="font"
-                href="https://github.com/SURYA28052003/Guess-The-Number"
-                >view code</a
-              >
-            </button>
-          </div>
-        </li>
-        <li>
-          <div class="container">
-            <a class="button" target="_blank"
-              ><img
                 src="{% static 'images/movie_site.jpg' %}"
                 alt="pro1"
                 class="image"
@@ -199,12 +161,44 @@
           <div class="container">
             <a class="button" target="_blank"
               ><img
-                src="{% static 'images/movie_site.jpg' %}"
+                src="{% static 'images/diabetes.jpg' %}"
                 alt="pro1"
                 class="image"
             /></a>
             <button class="btn">
               <a href="https://github.com/SURYA28052003/disease-prediction"
+                >View Code</a
+              >
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <a class="button" target="_blank"
+              ><img
+                src="{% static 'images/ecommerce.jpg' %}"
+                alt="pro1"
+                class="image"
+            /></a>
+            <button class="btn">
+              <a href="https://github.com/SURYA28052003/django_ecommerce"
+                >View Code</a
+              >
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <a class="button" target="_blank"
+              ><img
+                src="{% static 'images/guess_number.jpg' %}"
+                alt="pro1"
+                class="image"
+            /></a>
+            <button class="btn">
+              <a
+                class="font"
+                href="https://github.com/SURYA28052003/Guess-The-Number"
                 >view code</a
               >
             </button>
@@ -218,7 +212,16 @@
       <form method="post" action="{% url 'user_info' %}">
         <h2 class="title">Contact</h2>
         {% csrf_token %} {{ form.as_p }}
-        <button class="form_btn" type="submit">Submit</button>
+        <button
+          class="form_btn"
+          type="submit"
+          style="
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 100px;
+          "
+        >
+          Submit
+        </button>
       </form>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
